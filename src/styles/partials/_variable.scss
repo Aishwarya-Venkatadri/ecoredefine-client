@@ -1,3 +1,60 @@
 $tablet-width: 767px;
 $desktop-width: 1279PX;
 $font-family: 'AvenirNext LT Pro';
+
+$body-color:#E4EADF;
+$font-color: #7DA177;
+
+@mixin mobile-page-header{
+    font-size: 1.5rem;
+    font-weight:700;
+    line-height: 2rem;
+}
+@mixin mobile-section-header{
+    font-size: 0.75rem;
+    line-height:1.25rem;
+    font-weight: 700;
+}
+@mixin mobile-subheader{
+    font-size: 0.8125rem;
+    line-height:1.125rem ;
+    font-weight: 700;
+}
+@mixin mobile-body-copy{
+    font-size:0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+}
+@mixin mobile-labels-buttons{
+    font-size:0.625rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
+
+@mixin desktab-page-header{
+    font-size:2.0625rem;
+    line-height:2.75rem;
+    font-weight: 700;
+}
+@mixin desktab-section-header{
+    font-size: 0.75rem;
+    line-height:1.25rem ;
+    font-weight:700;
+}
+@mixin desktab-subheader{
+    font-size:0.875rem;
+    line-height: 1.375rem;
+    font-weight:700;
+}
+
+@mixin desktab-body-copy{
+ font-size: 0.875rem;
+ line-height: 1.375rem ;
+ font-weight: 400;
+
+}
+@mixin desktab-labels-buttons{
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
