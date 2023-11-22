@@ -6,12 +6,12 @@
   @include css-reset;
   display: flex;
   flex-direction: column;
-  min-height: 20vh;
-  width: 100vw;
+  min-height: 10vh;
+  width: 100%;
 
   &-logo {
-    width: 140px;
-    height: 140px;
+    width: 110px;
+    height: 110px;
   }
 
   &.expanded {
@@ -59,7 +59,7 @@
 
 .open {
   position: fixed;
-  top: 28px;
+  top: 18px;
   right: 78px;
   width: 50px;
   height: 50px;
