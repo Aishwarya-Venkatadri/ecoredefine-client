@@ -3,8 +3,11 @@
 @use "../../styles/partials/variable" as *;
 
 
+
 .footer{
+    @include mobile-body-copy;
     @include css-reset;
+    display: flex;
     overflow: hidden;
     height: 30vh;
     width: 100%;
@@ -13,7 +16,7 @@
         display: flex;
         flex-direction: column;
         width: 60%;
-        padding: 1rem;
+        margin: 1rem;
         &--stylemod{
             width: 20px;
         }
@@ -23,11 +26,24 @@
 
         }
         &__iconlist{
-            width: 50%;
+            width: 100%;
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: flex-start;
+            column-gap: 0.5rem;
         }
+    }
+    &-redirects{
+        width: 60%;
+        margin: 1rem;
+        font-family: $font-family;
+        color: $body-color;
+       
+        li{
+            list-style-type: none;
+            color: $body-color;
+        }
+        
     }
 
 }
