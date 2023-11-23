@@ -6,12 +6,12 @@
   @include css-reset;
   display: flex;
   flex-direction: column;
-  min-height: 10vh;
-  width: 100%;
+  min-height: 20vh;
+  width: 100vw;
 
   &-logo {
-    width: 110px;
-    height: 110px;
+    width: 140px;
+    height: 140px;
   }
 
   &.expanded {
@@ -59,8 +59,8 @@
 
 .open {
   position: fixed;
-  top: 18px;
-  right: 78px;
+  top: 28px;
+  right: 25px;
   width: 50px;
   height: 50px;
   display: block;
@@ -95,6 +95,18 @@
     }
     &:nth-child(3) {
       margin-top: 40px;
+    }
+  }
+
+  .close {
+    &:nth-child(1) {
+      transform: rotate(45deg) translateY(5px) translateX(5px);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:nth-child(3) {
+      transform: rotate(-45deg) translateY(-5px) translateX(5px);
     }
   }
 }
