@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../../assets/Logo/1.png';
 import './Header.scss';
+import { Link } from 'react-router-dom';
 
 function Header() {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -10,33 +11,46 @@ function Header() {
   };
 
   return (
-    <div className={`navbar ${menuOpened ? 'expanded' : ''}`}>
-      <div className='navbar-logo'>
-        <img className='navbar-logo' src={logo} alt='Eco Redefine logo' />
+    <>
+      <div className={`navbar ${menuOpened ? 'expanded' : ''}`}>
+        <div className='navbar-logo'>
+          <img className='navbar-logo' src={logo} alt='Eco Redefine logo' />
+        </div>
+        <div className={`open ${menuOpened ? 'oppenned' : ''}`} onClick={(e) => e.stopPropagation()}>
+          <span className='cls' onClick={toggleMenu}></span>
+          <span>
+            <ul className='sub-menu'>
+              <li className='navbar-list__item'>
+                <Link to="/" onClick={toggleMenu}>
+                  Home
+                </Link>
+              </li>
+              <li className='navbar-list__item'>
+                <Link to="/story" onClick={toggleMenu}>
+                  Our Story
+                </Link>
+              </li>
+              <li className='navbar-list__item'>
+                <Link to="/testimonials" onClick={toggleMenu}>
+                  Testimonials
+                </Link>
+              </li>
+              <li className='navbar-list__item'>
+                <Link to="/blogs" onClick={toggleMenu}>
+                  Blogs
+                </Link>
+              </li>
+              <li className='navbar-list__item'>
+                <Link to="/login" onClick={toggleMenu}>
+                  Login
+                </Link>
+              </li>
+            </ul>
+          </span>
+          <span className='cls' onClick={toggleMenu}></span>
+        </div>
       </div>
-      <div className={`open`} onClick={toggleMenu}>
-        <span className={`${menuOpened ? 'cls close' : 'cls'}`}></span>
-        <span>
-          <ul className={`sub-menu ${menuOpened ? 'oppenned' : ''}`}>
-            <li className='navbar-list__item'>
-              <a href="/">Home</a>
-            </li>
-            <li className='navbar-list__item'>
-              <a href="/story">Our Story</a>
-            </li>
-            <li className='navbar-list__item'>
-              <a href="/testimonials">Testimonials</a>
-            </li>
-            <li className='navbar-list__item'>
-              <a href="/blogs">Blogs</a>
-            </li>
-            <li className='navbar-list__item'>
-              <a href="/login">Login</a>
-            </li>
-          </ul>
-        </span>
-      </div>
-    </div>
+    </>
   );
 }
 
