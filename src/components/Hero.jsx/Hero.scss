@@ -33,12 +33,13 @@
       }
     }
     &__title {
+    width: 100%;
     font-family: $font-family;
     font-weight: 700;
     font-style: italic;
     @include mobile-labels-buttons;
       position: absolute;
-      top: 30%;
+      top: 35%;
       left: 5%;
       font-size: 20px;
       font-weight: 700;
