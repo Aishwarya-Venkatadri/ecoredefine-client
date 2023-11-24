@@ -8,7 +8,7 @@ import tweet from '../../assets/Icons/tweet.svg'
 
 
 function Footer(){
-    return(
+    return(<>
        <div className="footer">
         <div className="footer-icons">
             <p className="footer-icons__para">
@@ -29,7 +29,11 @@ function Footer(){
             </ul>
 
         </div>
+        <div className="footer-para">
+       <p className="footer-para_copyright">Copyright © 2023 Eco Redefine</p>
+         </div>
+        
        </div>
-    )
+   </> )
 }
 export default Footer;

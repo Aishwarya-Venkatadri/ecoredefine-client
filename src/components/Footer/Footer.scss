@@ -15,7 +15,7 @@
     &-icons{
         display: flex;
         flex-direction: column;
-        width: 60%;
+        width: 33.33%;
         margin: 1rem;
         &--stylemod{
             width: 20px;
@@ -34,7 +34,7 @@
         }
     }
     &-redirects{
-        width: 60%;
+        width: 33.33%;
         margin: 1rem;
         font-family: $font-family;
         color: $body-color;
@@ -44,6 +44,12 @@
             color: $body-color;
         }
         
+    }
+    &-para{
+        width: 33.33%;
+        margin: 1rem;
+        font-family: $font-family;
+        color: $body-color;
     }
 
 }
