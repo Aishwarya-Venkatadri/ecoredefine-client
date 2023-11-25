@@ -1,0 +1,47 @@
+
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variable" as *;
+
+.our-story-container {
+    padding: 1rem;
+  
+    .story-title {
+      @include mobile-page-header;
+      font-family: $font-family;
+      color: $font-color;
+    }
+  
+    .story-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .image-wrapper {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 20px;
+  
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+    }
+  
+    .text-wrapper {
+      width: 100%;
+      max-width: 600px;
+  
+      p {
+        @include mobile-body-copy;
+        font-family: $font-family;
+        color: $font-color;
+      }
+    }
+  }
+  
