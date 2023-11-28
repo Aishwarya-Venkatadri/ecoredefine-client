@@ -1,20 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Header from './components/Header/Header'; 
-import Footer from './components/Footer/Footer';
-import Hero from './components/Hero.jsx/Hero';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HomePage from './pages/HomePage/HomePage';
+import CategoryItemPage from './pages/CategoryItemPage/CategoryItemPage';
 import './App.scss';
+import OurStory from './pages/OurStory/OurStory';
 
 function App() {
     return(
-    <Router>
-    <Header />
-   <Hero />
-   <HomePage />
-    <Footer />
-  </Router>
+      <BrowserRouter>
+      <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/category/:id" element={<CategoryItemPage />} />
+      <Route path="/ourstory" element={<OurStory/>} />
+      </Routes>
+      </BrowserRouter>
     )
-
+    
 }
 export default App;
