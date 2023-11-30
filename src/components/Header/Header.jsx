@@ -13,9 +13,9 @@ function Header() {
   return (
     <>
       <div className={`navbar ${menuOpened ? 'expanded' : ''}`}>
-        <div className='navbar-logo'>
-          <img className='navbar-logo' src={logo} alt='Eco Redefine logo' />
-        </div>
+      <Link to="/"><div className='navbar-logo'>
+       <img className='navbar-logo' src={logo} alt='Eco Redefine logo' />
+        </div></Link> 
         <div className={`open ${menuOpened ? 'oppenned' : ''}`} onClick={(e) => e.stopPropagation()}>
           <span className='cls' onClick={toggleMenu}></span>
           <span>

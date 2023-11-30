@@ -21,7 +21,7 @@ function Footer(){
         </div>
         </div>
         <div className="footer-redirects">
-            <ul>Resources
+            <ul className="footer-links">Resources
             <Link to="/blogs"><li>Blogs</li></Link>
             <Link to="/contact"><li>Contact us</li></Link>
             <Link to="/suggestion"><li>Suggestion Box</li></Link>

@@ -1,7 +1,7 @@
 // CategoryItemPage.jsx
 
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -9,9 +9,10 @@ import './CategoryItemPage.scss';
 
 function CategoryItemPage() {
   const [listings, setListings] = useState([]);
-  const [categories, setCategories]= useState([])
-  console.log(categories);
+  const [categories, setCategories] = useState([]);
   const { id } = useParams();
+  // eslint-disable-next-line
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function getListingsData() {
@@ -29,12 +30,15 @@ function CategoryItemPage() {
 
   return (
     <>
-    <div className='header-mod'>
-      <Header />
+      <div className='header-mod'>
+        <Header />
       </div>
       <div>
         <h2 className='product'>{categories.category_name}</h2>
         <div className="product-cards">
+          <Link to="/add-listing" className="add-listing-button">
+            Do you want to Share?
+          </Link>
           {listings.map((listing) => (
             <div key={listing.listing_id} className="product-card el-wrapper">
               <div className="box-up">

@@ -1,0 +1,82 @@
+@use "../../styles/partials/variable" as *;
+@use "../../styles/partials/mixins" as *;
+@use '../../styles/partials/font' as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.add-listing-page {
+  background-color: $body-color;
+  padding: 16px;
+
+  @include tablet {
+    padding: 32px;
+  }
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+
+  h2 {
+    margin-bottom: 1rem;
+    color: $font-color;
+  }
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  font-size: 16px;
+  color: $font-color;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+select {
+  color: $font-color;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid $font-color;
+  font-size: 14px;
+
+  @include tablet {
+    padding: 12px;
+  }
+}
+
+.submit-btn {
+  background-color: $font-color;
+  color: $body-color;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+
+  @include tablet {
+    padding: 12px 24px;
+  }
+}
+
+.success-message,
+.error-message {
+  color: $font-color;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@include tablet {
+  .form-container {
+    max-width: 800px;
+  }
+}

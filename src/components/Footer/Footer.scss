@@ -8,10 +8,22 @@
     @include mobile-body-copy;
     @include css-reset;
     display: flex;
+    flex-direction: row;
     overflow: hidden;
-  height: 30vh;
+    height: 25vh;
     width: 100%;
+    font-size: 15px;
     background-color: $font-color;
+    @include tablet{
+        height: 25vh;
+       flex-direction: row;
+        @include desktab-body-copy;
+    }
+    @include desktop{
+        height: 30vh;
+        flex-direction: row;
+        font-size: 20px;
+    }
     &-icons{
         display: flex;
         flex-direction: column;
@@ -31,14 +43,31 @@
             flex-direction: row;
             justify-content: flex-start;
             column-gap: 0.5rem;
+            margin-top: 1rem;
         }
+       
     }
+    &-links{
+       @include desktop{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        flex-wrap: wrap;
+       }
+    }
+    
     &-redirects{
         width: 33.33%;
         margin: 1rem;
         font-family: $font-family;
         color: $body-color;
-       
+       @include tablet{
+        width: 50%;
+        font-size: medium;
+       }
+       @include desktop{
+       font-size: 20px;
+       }
         li{
             list-style-type: none;
             color: $body-color;

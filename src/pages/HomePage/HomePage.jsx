@@ -105,7 +105,7 @@ const HomePage = () => {
     <>
       <Header />
       <Hero />
-      
+      <h2 className="submain-heading">CATEGORIES</h2>
       {/* Slick Carousel for Category Cards */}
       <Slider {...settings} className="carousel-container">
         {memoizedCards}
