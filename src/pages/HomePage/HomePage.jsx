@@ -9,19 +9,19 @@ import '../HomePage/HomePage.scss';
 import Header from "../../components/Header/Header.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import Hero from "../../components/Hero.jsx/Hero.jsx";
-import Blogs from "../../components/Blogs/Blogs.jsx";
-import blogData from '../../assets/Data/blogs.json';
+// import Blogs from "../../components/Blogs/Blogs.jsx";
+// import blogData from '../../assets/Data/blogs.json';
 import cat1 from '../../assets/Images/cat1.webp';
 import cat2 from '../../assets/Images/cat2.jpeg';
 import cat3 from '../../assets/Images/cat3.webp';
 import cat4 from '../../assets/Images/cat4.jpg';
 import cat5 from '../../assets/Images/cat5.jpeg';
 import cat6 from '../../assets/Images/cat6.webp';
-import blog1Image from '../../assets/Images/blog1.jpeg';
-import blog2Image from '../../assets/Images/blog2.jpeg';
-import blog3Image from '../../assets/Images/blog3.jpeg';
-import blog4Image from '../../assets/Images/blog4.webp';
-import blog5Image from '../../assets/Images/blog5.jpeg';
+// import blog1Image from '../../assets/Images/blog1.jpeg';
+// import blog2Image from '../../assets/Images/blog2.jpeg';
+// import blog3Image from '../../assets/Images/blog3.jpeg';
+// import blog4Image from '../../assets/Images/blog4.webp';
+// import blog5Image from '../../assets/Images/blog5.jpeg';
 
 const HomePage = () => {
  
@@ -91,13 +91,13 @@ const HomePage = () => {
     ));
   }, [carousel]);
 
-  const memoizedBlogCards = useMemo(() => {
-    const blogImages = [blog1Image, blog2Image, blog3Image, blog4Image, blog5Image];
+  // const memoizedBlogCards = useMemo(() => {
+  //   const blogImages = [blog1Image, blog2Image, blog3Image, blog4Image, blog5Image];
   
-    return blogData.map((blog, index) => (
-      <Blogs key={blog.id} blog={{ ...blog, image: blogImages[index] }} />
-    ));
-  }, []); 
+  //   return blogData.map((blog, index) => (
+  //     <Blogs key={blog.id} blog={{ ...blog, image: blogImages[index] }} />
+  //   ));
+  // }, []); 
   
   
 
@@ -111,10 +111,10 @@ const HomePage = () => {
         {memoizedCards}
       </Slider>
 
-      {/* Slick Carousel for Blog Cards */}
+      {/* Slick Carousel for Blog Cards
       <Slider {...settings} className="blog-container">
         {memoizedBlogCards}
-      </Slider>
+      </Slider> */}
 
       <Footer />
     </>

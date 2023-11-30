@@ -1,7 +1,9 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import '../Blogs/Blogs.scss'; // Import the corresponding SCSS file
+import '../Blogs/Blogs.scss'
+// import Blogs from "../../components/Blogs/Blogs.jsx";
+// import blogData from '../../assets/Data/blogs.json';
 
 const BlogCard = ({ blog }) => {
   return (
