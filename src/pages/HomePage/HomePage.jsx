@@ -5,7 +5,7 @@ import '../HomePage/HomePage.scss'
 import Header from "../../components/Header/Header.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import Hero from "../../components/Hero.jsx/Hero.jsx";
-import OurStory from "../OurStory/OurStory.jsx";
+
 import cat1 from '../../assets/Images/cat1.webp'
 import cat2 from '../../assets/Images/cat2.jpeg'
 import cat3 from '../../assets/Images/cat3.webp'
@@ -48,7 +48,7 @@ function HomePage() {
           </div>
         ))}
       </div>
-      <OurStory />
+     
       <Footer />
     </>);
   }

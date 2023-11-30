@@ -26,7 +26,7 @@ function Header() {
                 </Link>
               </li>
               <li className='navbar-list__item'>
-                <Link to="/story" onClick={toggleMenu}>
+                <Link to="/ourstory" onClick={toggleMenu}>
                   Our Story
                 </Link>
               </li>

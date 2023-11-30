@@ -29,9 +29,11 @@ function CategoryItemPage() {
 
   return (
     <>
+    <div className='header-mod'>
       <Header />
+      </div>
       <div>
-        <p>You are viewing: {categories.category_name}</p>
+        <h2 className='product'>{categories.category_name}</h2>
         <div className="product-cards">
           {listings.map((listing) => (
             <div key={listing.listing_id} className="product-card el-wrapper">

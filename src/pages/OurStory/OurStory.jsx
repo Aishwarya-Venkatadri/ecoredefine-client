@@ -2,9 +2,12 @@
 import React from 'react';
 import '../OurStory/OurStory.scss'; 
 import ecoRedefineImage from '../../assets/Images/ourstory.gif'; 
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 
 function OurStory() {
-  return (
+  return (<>
+  <Header />
     <div className="our-story-container">
       <h1 className="story-title">Our Story: Eco Redefine</h1>
       <div className="story-wrapper">
@@ -27,7 +30,8 @@ function OurStory() {
         </div>
       </div>
     </div>
-  );
+    <Footer />
+    </>);
 };
 
 export default OurStory;
