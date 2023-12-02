@@ -57,7 +57,7 @@ function AddListingsPage() {
       setSuccessMessage('Listing added successfully!');
       setErrorMessage('');
 
-      navigate(`/categories/${formData.category_id}`);
+      navigate('/');
     } catch (error) {
       console.error('Error adding listing:', error);
       setSuccessMessage('');

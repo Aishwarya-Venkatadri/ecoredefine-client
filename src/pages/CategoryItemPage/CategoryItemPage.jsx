@@ -33,12 +33,12 @@ function CategoryItemPage() {
       <div className='header-mod'>
         <Header />
       </div>
+      <Link to="/add-listing" className="add-listing-button">
+            Do you want to Share?
+          </Link>
       <div>
         <h2 className='product'>{categories.category_name}</h2>
         <div className="product-cards">
-          <Link to="/add-listing" className="add-listing-button">
-            Do you want to Share?
-          </Link>
           {listings.map((listing) => (
             <div key={listing.listing_id} className="product-card el-wrapper">
               <div className="box-up">
