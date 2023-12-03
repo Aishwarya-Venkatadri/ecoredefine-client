@@ -9,8 +9,10 @@
   min-height: 20vh;
   width: 100vw;
   @include tablet{
+    width: 100%;
     display: flex;
-     flex-direction: column;
+     flex-direction: row;
+     justify-content: space-between;
      align-items: center;
   }
 
@@ -18,8 +20,9 @@
     width: 140px;
     height: 140px;
     @include tablet{
-      width: 210px;
-      height:210px;
+      width: 40%;
+      width: 200px;
+      height:200px;
     }
   }
 
@@ -76,6 +79,12 @@
   cursor: pointer;
   transition: opacity 0.2s linear;
   color: #7DA177;
+  @include tablet{
+  display: none;
+  }
+  @include desktop{
+    display: none;
+  }
 
   &:hover {
     opacity: 0.8;
@@ -86,7 +95,7 @@
     float: left;
     clear: both;
     height: 4px;
-    width: 20px;  // Adjusted width
+    width: 20px;  
     border-radius: 4px;
     background-color: #7DA177;
     position: absolute;
@@ -96,18 +105,17 @@
     transition: all 0.4s ease;
 
     &:nth-child(1) {
-      margin-top: 5px;  // Adjusted margin-top
+      margin-top: 5px;  
       z-index: 9;
     }
     &:nth-child(2) {
-      margin-top: 12.5px;  // Adjusted margin-top
-    }
+      margin-top: 12.5px;  
     &:nth-child(3) {
-      margin-top: 20px;  // Adjusted margin-top
+      margin-top: 20px;  
     }
 
     .line {
-      width: 20px;  // Adjusted width
+      width: 20px; 
       height: 4px;
       background-color: #7DA177;
       position: absolute;
@@ -137,7 +145,7 @@
       opacity: 0;
     }
     &:nth-child(3) {
-      transform: rotate(-45deg) translateY(-2.5px) translateX(2.5px);  // Adjusted translateY and translateX
+      transform: rotate(-45deg) translateY(-2.5px) translateX(2.5px); 
     }
   }
 }
@@ -153,6 +161,41 @@
   border-radius: 50%;
   z-index: 18;
   overflow: hidden;
+  &--mod {
+    display: none;
+  
+    @include tablet {
+      width: 60%;
+      display: flex;
+      flex-direction: row;
+      color: $font-color;
+      font-family: $font-color;
+      justify-content: space-around;
+      perspective: 1000px; 
+  
+      &__list-item {
+        color: $font-color;
+        list-style-type: none;
+        cursor: pointer;
+  
+        a {
+          color: $font-color;
+          position: relative;
+          display: block;
+          padding: 10px;
+          transition: transform 0.3s ease; 
+  
+          &:hover {
+            background-color: $font-color;
+            color: $body-color;
+            transform: translateZ(10px);
+          }
+        }
+      }
+    }
+  }
+  
+  
 
   li {
     display: block;
@@ -190,5 +233,6 @@
       float: left;
       line-height: 40px;
     }
+    
   }
 }

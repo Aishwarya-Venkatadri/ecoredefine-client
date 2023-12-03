@@ -16,6 +16,33 @@ function Header() {
       <Link to="/"><div className='navbar-logo'>
        <img className='navbar-logo' src={logo} alt='Eco Redefine logo' />
         </div></Link> 
+        <ul className='sub-menu--mod'>
+              <li className='sub-menu--mod__list-item'>
+                <Link to="/">
+                  Home
+                </Link>
+              </li>
+              <li className='sub-menu--mod__list-item'>
+                <Link to="/ourstory">
+                  Our Story
+                </Link>
+              </li>
+              <li className='sub-menu--mod__list-item'>
+                <Link to="/testimonials">
+                  Testimonials
+                </Link>
+              </li>
+              <li className='sub-menu--mod__list-item'>
+                <Link to="/blogs">
+                  Blogs
+                </Link>
+              </li>
+              <li className='sub-menu--mod__list-item'>
+                <Link to="/login">
+                  Login
+                </Link>
+              </li>
+            </ul>
         <div className={`open ${menuOpened ? 'oppenned' : ''}`} onClick={(e) => e.stopPropagation()}>
           <span className='cls' onClick={toggleMenu}></span>
           <span>

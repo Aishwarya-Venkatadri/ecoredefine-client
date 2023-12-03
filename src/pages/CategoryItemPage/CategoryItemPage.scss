@@ -27,7 +27,7 @@ body {
   border: 1px solid $font-color;
   border-radius: $product-card-border-radius;
   margin: 10px;
-  width: 100%; // Adjusted width to 100% for responsiveness
+  width: 100%;
   text-align: center;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
@@ -114,7 +114,7 @@ body {
       .price {
         font-size: 1.5rem;
         margin-right: 10px;
-        @include mobile-labels-buttons; // Added here
+        @include mobile-labels-buttons; 
         transition: transform 0.5s ease-in-out, color 0.3s ease-in-out;
       }
 
@@ -130,7 +130,7 @@ body {
           color: $font-color;
           letter-spacing: 0.05em;
           text-transform: uppercase;
-          @include mobile-labels-buttons; // Added here
+          @include mobile-labels-buttons; 
           transition: color 0.3s ease-in-out;
         }
       }
@@ -163,11 +163,20 @@ body {
   }
 
   @include tablet {
-    width: 100%; // Adjusted width to 100% for responsiveness
+    width: 100%; 
   }
 
   @include desktop {
-    width: 100%; // Adjusted width to 100% for responsiveness
-    margin: 30px 0; // Adjusted margin for responsiveness
+    width: 100%; 
+    margin: 30px 0; 
   }
+}
+.add-listing-button{
+  background-color: $font-color;
+  color: $body-color;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 1rem 1rem;
+  margin-left: 0.8rem;
+  cursor: pointer;
 }
