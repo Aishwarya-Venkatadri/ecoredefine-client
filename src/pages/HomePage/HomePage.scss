@@ -40,46 +40,51 @@ body {
     background-color: #7DA177;
   }
 
+  
   // Styling for the carousel navigation buttons
-  .slick-prev,
-  .slick-next {
-    font-size: 0; // Hide the text
-    color: #7DA177; // Arrow color
-    background-color: transparent; // Arrow background color
-    width: 40px; // Set the width of the arrow
-    height: 40px; // Set the height of the arrow
-    top: 50%; // Adjusted top position
-    z-index: 1; // Ensure arrows are above the carousel
+.slick-prev,
+.slick-next {
+  font-size: 0; // Hide the text
+  color: #7DA177; // Arrow color
+  background-color: transparent; // Arrow background color
+  width: 40px; // Set the width of the arrow
+  height: 40px; // Set the height of the arrow
+  top: 50%; // Adjusted top position
+  z-index: 1; // Ensure arrows are above the carousel
+  cursor: pointer; // Add cursor pointer
 
-    &:hover {
-      color: #5e8e5e !important; // Arrow color on hover
-    }
-
-    &::before {
-      content: ""; // Hide the text content
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+  &:hover {
+    color: #5e8e5e !important; // Arrow color on hover
   }
 
-  .slick-prev {
-    left: 10px;
-    &::before {
-      content: url('../../assets/Icons/previous.svg');
-      left: 50%; // Adjusted left position
-      transform: translateX(-50%);
-    }
+  &::before {
+    content: ""; // Hide the text content
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%; // Set the width to ensure the pseudo-element covers the entire button
+    height: 100%; // Set the height to ensure the pseudo-element covers the entire button
   }
+}
 
-  .slick-next {
-    right: 10px;
-    &::before {
-      content: url('../../assets/Icons/next.svg');
-      right: 50%; // Adjusted right position
-      transform: translateX(50%);
-    }
+.slick-prev {
+  left: 10px;
+  &::before {
+    content: url('../../assets/Icons/previous.svg');
+    left: 50%; // Adjusted left position
+    transform: translateX(-50%);
   }
+}
+
+.slick-next {
+  right: 10px;
+  &::before {
+    content: url('../../assets/Icons/next.svg');
+    right: 50%; // Adjusted right position
+    transform: translateX(50%);
+  }
+}
+
 
   .slick-slider {
     width: 100%;
