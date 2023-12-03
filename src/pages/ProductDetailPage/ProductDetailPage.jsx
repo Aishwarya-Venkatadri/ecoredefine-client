@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../ProductDetailPage/ProductDetailPage.scss';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
@@ -109,6 +110,11 @@ const ProductDetail = () => {
   return (
     <>
       <Header />
+      <div className='update-button-container'>
+      <Link to={`/edit-listing/${id}`} className="update-button">
+          Update ?
+        </Link>
+      </div>
       <div className="product-detail-container">
         {product ? (
           <>
@@ -116,7 +122,7 @@ const ProductDetail = () => {
               <img src={`http://localhost:5050/listings-images/${product.image}`} alt={product.listing_name} />
             </div>
             <div className="product-details">
-              <h1>{product.listing_name}</h1>
+              <h3>{product.listing_name}</h3>
               <p className="location">Location: {product.location}</p>
               <p className="availability">Availability: {product.availability}</p>
               <p className="price">Price: ${product.listing_borrow_price}</p>

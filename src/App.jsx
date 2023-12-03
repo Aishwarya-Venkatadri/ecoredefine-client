@@ -6,7 +6,9 @@ import './App.scss';
 import OurStory from './pages/OurStory/OurStory';
 import ProductDetailPage from './pages/ProductDetailPage/ProductDetailPage'
 import AddListingsPage from './pages/AddListingPage/AddListingPage';
+import EditListingPage from './pages/EditListingPage/EditListingPage';
 import PageNotFound from './pages/PageNotFound/PageNotFound'
+import Blogs from './components/Blogs/Blogs'
 
 function App() {
     return(
@@ -17,6 +19,8 @@ function App() {
       <Route path="/ourstory" element={<OurStory />} />
       <Route path='/listings/:id' element={<ProductDetailPage />} />
       <Route path='/add-listing' element={<AddListingsPage />} />
+      <Route path='/blogs' element={<Blogs />} />
+      <Route path="/edit-listing/:id" element={<EditListingPage />} />
       <Route path='*' element={<PageNotFound />} />
       </Routes>
       </BrowserRouter>
