@@ -1,16 +1,16 @@
 // Import necessary modules and files
-import React, { useState } from 'react';
-import '../Blogs/Blogs.scss'; // Make sure to import your SCSS file
-import blogsData from '../../assets/Data/blogs.json';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+import React, { useState } from "react";
+import "../Blogs/Blogs.scss"; // Make sure to import your SCSS file
+import blogsData from "../../assets/Data/blogs.json";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 // Import your images
-import blog1Image from '../../assets/Images/blog1.jpeg';
-import blog2Image from '../../assets/Images/blog2.jpeg';
-import blog3Image from '../../assets/Images/blog3.jpeg';
-import blog4Image from '../../assets/Images/blog4.webp';
-import blog5Image from '../../assets/Images/blog5.jpeg';
+import blog1Image from "../../assets/Images/blog1.jpeg";
+import blog2Image from "../../assets/Images/blog2.jpeg";
+import blog3Image from "../../assets/Images/blog3.jpeg";
+import blog4Image from "../../assets/Images/blog4.webp";
+import blog5Image from "../../assets/Images/blog5.jpeg";
 
 const imageMap = {
   1: blog1Image,
@@ -48,7 +48,11 @@ const Blog = () => {
               ></div>
               <h2 className="modal__title">{selectedBlog.title}</h2>
               <p className="modal__text">{selectedBlog.content}</p>
+              <button class="modal__done-btn" onClick={handleCloseModal}>
+              Thank you
+            </button>
             </div>
+            
           </div>
         ) : (
           <ul className="cards">
