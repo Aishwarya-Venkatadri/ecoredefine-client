@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import '../ProductDetailPage/ProductDetailPage.scss';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Chart from 'chart.js/auto';
+import { useNavigate } from 'react-router-dom';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -13,6 +14,7 @@ const ProductDetail = () => {
   const [isBorrowed, setBorrowed] = useState(false);
   const [myChart, setMyChart] = useState(null);
   const chartRef = useRef(null);
+  const navigate = useNavigate();
 
   const calculateCarbonFootprint = useCallback(async () => {
     try {
@@ -107,13 +109,41 @@ const ProductDetail = () => {
     }
   }, [isBorrowed, calculateCarbonFootprint]);
 
+  const handleDeleteListing = async () => {
+    const isConfirmed = window.confirm("Are you sure you want to delete this listing?");
+    
+    if (isConfirmed) {
+      try {
+        // Fetch the listing details to get the category_id
+        const response = await axios.get(`http://localhost:5050/listings/${id}`);
+        const category_id = response.data.category_id;
+
+        // Delete the listing
+        await axios.delete(`http://localhost:5050/listings/${id}`);
+        window.alert("Listing deleted successfully!");
+        
+        // Navigate back to the CategoryItemPage with the captured category_id
+        navigate(`/category/${category_id}`);
+      } catch (error) {
+        console.error("Error deleting listing:", error);
+      }
+    }
+  };
+
   return (
     <>
       <Header />
+      <div className='buttons-container'>
       <div className='update-button-container'>
       <Link to={`/edit-listing/${id}`} className="update-button">
           Update ?
         </Link>
+      </div>
+      <div className='delete-button-container'>
+      <Link to={`/edit-listing/${id}`} className="delete-button" onClick={handleDeleteListing}>
+          Delete ?
+        </Link>
+      </div>
       </div>
       <div className="product-detail-container">
         {product ? (
