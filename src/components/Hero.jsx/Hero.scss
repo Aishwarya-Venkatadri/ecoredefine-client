@@ -1,0 +1,51 @@
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variable" as *;
+
+.hero {
+    height: 45vh;
+    position: relative;
+   
+   
+    &__bgwrapper {
+      background-image: url("../../assets//Images/hero1.jpeg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(125, 161, 119, 0.5);
+        
+        // (125,161,119)
+        
+      }
+    }
+    &__title {
+    width: 100%;
+    font-family: $font-family;
+    font-weight: 700;
+    font-style: italic;
+    @include mobile-labels-buttons;
+      position: absolute;
+      top: 35%;
+      left: 5%;
+      font-size: 20px;
+      font-weight: 700;
+      z-index: 1;
+      color: $body-color; 
+      opacity: 100%;
+      
+    }
+  }

@@ -1,0 +1,241 @@
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variable" as *;
+
+.navbar {
+  @include css-reset;
+  display: flex;
+  flex-direction: column;
+  min-height: 20vh;
+  width: 100vw;
+
+  @include tablet {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-logo {
+    width: 140px;
+    height: 140px;
+
+    @include tablet {
+      width: 40%;
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  &.expanded {
+    .sub-menu {
+      opacity: 1;
+      height: 400px;
+      width: 400px;
+    }
+    span:nth-child(2) {
+      overflow: visible;
+    }
+    span:nth-child(1),
+    span:nth-child(3) {
+      z-index: 100;
+      transform: rotate(45deg);
+    }
+    span:nth-child(1) {
+      transform: rotate(45deg) translateY(12px) translateX(12px);
+    }
+    span:nth-child(2) {
+      height: 400px;
+      width: 400px;
+      right: -160px;
+      top: -160px;
+      border-radius: 50%;
+      background-color: rgba(125, 161, 119, 0.5);
+    }
+    span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-10px) translateX(10px);
+    }
+    li {
+      margin-right: 168px;
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+      list-style-type: none;
+    }
+  }
+}
+
+.open {
+  position: fixed;
+  top: 28px;
+  right: 25px;
+  width: 30px;
+  height: 30px;
+  display: block;
+  cursor: pointer;
+  transition: opacity 0.2s linear;
+  color: #7DA177;
+
+  @include tablet {
+    display: none;
+  }
+
+  @include desktop {
+    display: none;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  span {
+    display: block;
+    float: left;
+    clear: both;
+    height: 4px;
+    width: 20px;
+    border-radius: 4px;
+    background-color: #7DA177;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+
+    &:nth-child(1) {
+      margin-top: 5px;
+      z-index: 9;
+    }
+    &:nth-child(2) {
+      margin-top: 12.5px;
+    }
+    &:nth-child(3) {
+      margin-top: 20px;
+    }
+
+    .line {
+      width: 20px;
+      height: 4px;
+      background-color: #7DA177;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all 0.4s ease;
+
+      &:nth-child(1) {
+        margin-top: 5px;
+        z-index: 9;
+      }
+      &:nth-child(2) {
+        margin-top: 12.5px;
+      }
+      &:nth-child(3) {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .close {
+    &:nth-child(1) {
+      transform: rotate(45deg) translateY(2.5px) translateX(2.5px);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:nth-child(3) {
+      transform: rotate(-45deg) translateY(-2.5px) translateX(2.5px);
+    }
+  }
+}
+
+.sub-menu {
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  height: 0;
+  width: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+  background-color: rgba(125, 161, 119, 0.5);
+  border-radius: 50%;
+  z-index: 18;
+  overflow: hidden;
+
+  &--mod {
+    display: none;
+
+    @include tablet {
+      width: 60%;
+      display: flex;
+      flex-direction: row;
+      color: $font-color;
+      font-family: $font-color;
+      justify-content: space-around;
+      perspective: 1000px;
+
+      &__list-item {
+        color: $font-color;
+        list-style-type: none;
+        cursor: pointer;
+
+        a {
+          color: $font-color;
+          position: relative;
+          display: block;
+          padding: 10px;
+          transition: transform 0.3s ease;
+
+          &:hover {
+            background-color: $font-color;
+            color: $body-color;
+            transform: translateZ(10px);
+          }
+        }
+      }
+    }
+  }
+
+  li {
+    display: block;
+    float: right;
+    clear: both;
+    height: auto;
+    margin-right: -160px;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    &:first-child {
+      margin-top: 180px;
+    }
+    &:nth-child(1) {
+      -webkit-transition-delay: 0.05s;
+    }
+    &:nth-child(2) {
+      -webkit-transition-delay: 0.10s;
+    }
+    &:nth-child(3) {
+      -webkit-transition-delay: 0.15s;
+    }
+    &:nth-child(4) {
+      -webkit-transition-delay: 0.20s;
+    }
+    &:nth-child(5) {
+      -webkit-transition-delay: 0.25s;
+    }
+
+    a {
+      color: black;
+      font-family: $font-family;
+      font-size: 16px;
+      width: 100%;
+      display: block;
+      float: left;
+      line-height: 40px;
+    }
+  }
+}
