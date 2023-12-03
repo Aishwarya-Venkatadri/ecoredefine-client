@@ -1,0 +1,113 @@
+// EditListingPage.scss
+
+@use '../../styles/partials/variable' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/font' as *;
+
+.edit-listing-page {
+  background-color: $body-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-listing-content {
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+  padding: 20px;
+  max-width: 600px;
+}
+
+.edit-listing-form {
+  display: flex;
+  flex-direction: column;
+
+  .edit-listing-section {
+    padding-top: 16px;
+
+    .edit-listing-section-title {
+      color: $font-color;
+      font-family: 'AvenirNext LT Pro';
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+    .edit-listing-category {
+      margin-top: 8px;
+      color: $font-color;
+      font-family: 'AvenirNext LT Pro';
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 20px;
+
+      &-select {
+        border-radius: 20px;
+        background-color: $font-color;
+        padding: 8px;
+        border: 1px solid $font-color;
+        width: 100%;
+        height: 36px;
+
+        &.has-error {
+          border-color: red;
+        }
+      }
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 4px;
+      font-size: 12px;
+    }
+  }
+}
+
+.edit-listing-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  border-radius: 0px 0px 3px 3px;
+  background-color: $body-color;
+  padding: 16px;
+  width: 100%;
+  justify-content: flex-end;
+
+  .edit-listing-cancel-button {
+    color: $font-color;
+    font-family: 'AvenirNext LT Pro';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    display: inline-flex;
+    padding: 8px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    border: 1px solid $font-color;
+    width: auto;
+  }
+
+  .edit-listing-save-button {
+    color: $body-color;
+    background: $font-color;
+    font-family: 'AvenirNext LT Pro';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    display: inline-flex;
+    padding: 8px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    border: 1px solid $font-color;
+    width: auto;
+    cursor: pointer;
+  }
+}

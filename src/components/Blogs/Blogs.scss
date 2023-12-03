@@ -1,0 +1,194 @@
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variable" as *; 
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-bottom: 2rem;
+  padding: 0;
+  font-family: $font-family;
+  @include tablet{
+    @include desktab-body-copy;
+  }
+}
+
+.cards__item {
+  display: flex;
+  padding: 1rem;
+  @include tablet {
+    width: 50%;
+  }
+  @include desktop {
+    width: 33.3333%;
+  }
+
+  .card {
+    background-color: white;
+    border-radius: $product-card-border-radius;
+    box-shadow: $product-card-shadow;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    &:hover {
+      .card__image {
+        filter: contrast(100%);
+      }
+    }
+
+    .card__image {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-top-left-radius: $product-card-border-radius;
+      border-top-right-radius: $product-card-border-radius;
+      filter: contrast(70%);
+      overflow: hidden;
+      position: relative;
+      transition: filter 0.5s cubic-bezier(.43, .41, .22, .91);
+      &::before {
+        content: "";
+        display: block;
+        padding-top: 56.25%; 
+      }
+      @include tablet {
+        &::before {
+          padding-top: 66.6%; 
+        }
+      }
+    }
+
+    .card__title {
+      color: $font-color;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.23rem;
+      @include mobile-subheader;
+
+      @include desktop{
+        @include desktab-subheader;
+      }
+    }
+
+    .card__content {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .card__text {
+      flex: 1 1 auto;
+     @include mobile-body-copy;
+      margin-bottom: 1.25rem;
+      @include desktop{
+        @include desktab-body-copy;
+      }
+    }
+
+    .card__btn {
+      @include mobile-labels-buttons;
+      background-color: white;
+      border: 1px solid $body-color;
+      color: $font-color;
+      padding: 0.5rem;
+      cursor: pointer;
+      @include mobile-labels-buttons;
+
+      @include tablet{
+        @include desktab-labels-buttons;
+      }
+    }
+  }
+}
+  
+.modal__image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  border-top-left-radius: $product-card-border-radius;
+  border-top-right-radius: $product-card-border-radius;
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(.43, .41, .22, .91);
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+  }
+  @include tablet {
+    &::before {
+      padding-top: 66.6%;
+    }
+  }
+}
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(100px);
+  z-index: 1000;
+  overflow-y: auto;
+
+  .modal__content {
+    background-color: white;
+    border-radius: $product-card-border-radius;
+    box-shadow: $product-card-shadow;
+    padding: 2rem;
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    overflow-y: auto; // Enable vertical scrolling for the modal content
+
+    .modal__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: $font-color;
+    }
+
+    .modal__title {
+      color: $font-color;
+      @include mobile-section-header;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      @include desktop {
+        @include desktab-section-header;
+      }
+    }
+
+    .modal__text {
+      margin-bottom: 2rem;
+      @include mobile-body-copy;
+
+      @include tablet {
+        @include desktab-body-copy;
+      }
+    }
+
+    .modal__done-btn {
+      background-color: $font-color;
+      color: $body-color;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 1rem;
+
+      &:hover {
+        background-color: darken($body-color, 10%);
+      }
+    }
+  }
+}
+
